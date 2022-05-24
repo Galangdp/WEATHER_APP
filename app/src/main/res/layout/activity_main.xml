@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.galang.weatherapp.ui.MainActivity">
+
+    <ImageView
+        android:id="@+id/img_bg_weather"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/content_image_background_page"
+        android:scaleType="centerCrop"
+        android:src="@color/purple_700" />
+
+    <ImageView
+        android:id="@+id/img_ic_weather"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="96dp"
+        android:contentDescription="Images Icon by Current Weather"
+        app:flow_verticalBias="0.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_degree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Degree"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/img_ic_weather" />
+
+    <TextView
+        android:id="@+id/tv_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="City"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="38dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_degree" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_forecast_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="@android:color/transparent"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/edt_search"
+        app:layout_constraintTop_toBottomOf="@id/tv_city"
+        tools:listitem="@layout/row_item_weather" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/edt_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="48dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:inputType="text"
+        android:theme="@style/SearchViewStyle"
+        app:defaultQueryHint="Search another location"
+        app:iconifiedByDefault="false"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/edt_search" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
